@@ -176,7 +176,7 @@
         CGFloat tokenWidth = MIN(CGRectGetWidth(self.bounds), CGRectGetWidth(token.frame));
         if (x > width - tokenWidth) {
             y += lineHeight + margin;
-            x = 0;
+            x = 0 + margin;
             rowCount = 0;
         }
         
