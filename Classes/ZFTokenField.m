@@ -167,6 +167,8 @@
     
     if ([self.delegate respondsToSelector:@selector(tokenMarginInTokenInField:)]) {
         margin = [self.delegate tokenMarginInTokenInField:self];
+        x = margin;
+        y = margin;
     }
     
     for (UIView *token in self.tokenViews) {
