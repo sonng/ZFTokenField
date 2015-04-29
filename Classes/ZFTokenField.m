@@ -115,7 +115,14 @@
     [self enumerateItemRectsUsingBlock:^(CGRect itemRect) {
         totalRect = CGRectUnion(itemRect, totalRect);
     }];
-    return totalRect.size;
+    
+    CGFloat margin = 0;
+    
+    if ([self.delegate respondsToSelector:@selector(tokenMarginInTokenInField:)]) {
+        margin = [self.delegate tokenMarginInTokenInField:self];
+    }
+    
+    return CGSizeMake(totalRect.size.width + (margin * 2), totalRect.size.height + (margin * 2));
 }
 
 #pragma mark - Public
