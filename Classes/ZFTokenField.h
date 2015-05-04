@@ -17,6 +17,7 @@
 @required
 - (CGFloat)lineHeightForTokenInField:(ZFTokenField *)tokenField;
 - (NSUInteger)numberOfTokenInField:(ZFTokenField *)tokenField;
+- (NSUInteger)maximumNumberOfTokenInField:(ZFTokenField *)tokenField;
 - (UIView *)tokenField:(ZFTokenField *)tokenField viewForTokenAtIndex:(NSUInteger)index;
 @end
 
