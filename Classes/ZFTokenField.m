@@ -51,6 +51,9 @@
 @property (nonatomic, strong) NSMutableArray *tokenViews;
 
 @property (nonatomic, strong) NSString *tempTextFieldText;
+
+@property (nonatomic, strong) UITapGestureRecognizer *responderTapGesture;
+
 @end
 
 @implementation ZFTokenField
@@ -88,6 +91,9 @@
     self.textField.backgroundColor = [UIColor clearColor];
     self.textField.delegate = self;
     [self.textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    
+    self.responderTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self.textField action:@selector(becomeFirstResponder)];
+    [self addGestureRecognizer:self.responderTapGesture];
     
     [self reloadData];
 }
